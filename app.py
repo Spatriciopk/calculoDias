@@ -27,6 +27,8 @@ df = pd.DataFrame(data)
 
 
 def calculate_days(start_date, end_date, method=False):
+    start_date = datetime.datetime.strptime(start_date, "%d/%b/%Y:%H:%M:%S %z")
+    end_date = datetime.datetime.strptime(end_date, "%d/%b/%Y:%H:%M:%S %z")
     if not method:
         method = False
     else:
