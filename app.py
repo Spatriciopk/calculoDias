@@ -27,6 +27,7 @@ df = pd.DataFrame(data)
 
 
 def calculate_days(start_date, end_date, method=False):
+    print("Fechas%%%%%%%%%%%%%%%%")
     print(start_date)
     print(end_date)
     if not method:
