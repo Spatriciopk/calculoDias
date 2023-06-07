@@ -27,9 +27,6 @@ df = pd.DataFrame(data)
 
 
 def calculate_days(start_date, end_date, method=False):
-    print("Fechas%%%%%%%%%%%%%%%%")
-    print(start_date)
-    print(end_date)
     if not method:
         method = False
     else:
@@ -76,8 +73,8 @@ def calculate_days360():
     end_date_str = data['end_date']
     method = data.get('method', False)
     anioLaborado =  data['anioLaborado']
-    start_date = datetime.datetime.strptime(start_date_str, '%Y-%m-%d').date()
-    end_date = datetime.datetime.strptime(end_date_str, '%Y-%m-%d').date()
+    start_date = datetime.datetime.strptime(start_date_str.split('T')[0], '%Y-%m-%d').date()
+    end_date = datetime.datetime.strptime(end_date_str.split('T')[0], '%Y-%m-%d').date()
 
     result = calculate_days(start_date, end_date, method)
 
